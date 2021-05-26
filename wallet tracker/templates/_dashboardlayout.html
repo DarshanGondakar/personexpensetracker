@@ -1,0 +1,95 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="shortcut icon" type="image/png" href="{{url_for('static',filename='favicon.png')}}">
+    <link rel="stylesheet" href="/static/dashboard.css">
+    <link rel="stylesheet" href="https://maxst.icons8.com/vue-static/landings/line-awesome/line-awesome/1.3.0/css/line-awesome.min.css"> 
+    <title>{{ title }} | Track Your Expense</title>
+</head>
+
+<style>
+ul {
+  list-style-type: none;
+  margin: 0;
+  padding: 0;
+  overflow: hidden;
+  background-color: #333;
+}
+
+li {
+  float: left;
+}
+
+li a {
+  display: block;
+  color: white;
+  text-align: center;
+  padding: 14px 20px;
+  text-decoration: none;
+}
+
+li a:hover {
+  background-color: #111;
+}
+</style>
+
+<body>
+    <ul>
+        <li>
+            <a href="/home">
+                <span class="las la-server"></span>
+                Dashboard
+            </a>
+        </li>
+        <li>
+            <a href="/monthlylimit">
+                <span class="las la-bell"></span>
+                Set Monthly Limit
+            </a>
+        </li>
+        <li>
+            <a href="/budget">
+                <span class="las la-wallet"></span>
+                Add Budget
+            </a>
+        </li>
+        <li>
+            <a href="/mbudget   ">
+                <span class="las la-tasks"></span>
+                Manage Budget
+            </a>
+        </li>
+        <li>
+            <a href="/changepwd">
+                <span class="las la-copy"></span>
+                Change Password
+            </a>
+        </li>
+        <li>
+            <a href="/logout">
+                <span class="las la-sign-out-alt"></span>
+                Logout
+            </a>
+        </li>
+
+        <div class="names">
+                <span class="las la-user" style="font-size:20px; font-weight: bold; color:#ffffff"></span>
+                <span style="font-weight: bold; font-size: 20px; color:#ffffff">{{ username }}</span>
+                <div><span style="color:#ffffff">{{ email }}</span></div>
+        </div>
+
+    </ul>
+              
+    <main>
+        <div class="wrapper">
+            {% block body %}
+ 
+            {% endblock %}
+        </div>
+    </main>
+    </div>
+</body>
+</html>
